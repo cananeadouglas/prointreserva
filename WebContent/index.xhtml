@@ -2,18 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html">
-<head>
-<title>Cadastro</title>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="Reserva" content="" />
-<meta name="equipe:proint" content="" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+</h:head>
 
-</head>
 <h:body>
 
 	<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -21,11 +20,12 @@
 		<h:commandButton class="navbar-toggler" type="button" />
 		<span class="navbar-toggler-icon"></span>
 
-
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="index.xhtml">Principal<span	class="sr-only">(current)</span></a></li>
-					<li class="nav-item active"><a class="nav-link" href="cadastrobean.xhtml">Cadastro<span	class="sr-only">(current)</span></a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="index.xhtml">Principal<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="cadastrobean.xhtml">Cadastro<span class="sr-only">(current)</span></a></li>
 				<!--  <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>  
@@ -45,27 +45,25 @@
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">Tela de Cadastro</h1>
-			<p>Cadastre-se no nosso site para obter informações sobre Trilhas artigos e muito mais.</p>
-			<p>
-				<a class="btn btn-primary btn-lg" href="#"> &raquo;</a>
-			</p>
-			
+			<p>Cadastre-se no nosso site para obter informações sobre Trilhas
+				artigos e muito mais.</p>
+
 			<h:form id="formCadastroBean">
-			
-			<h:inputText id="camponome"  value="campon"></h:inputText>
-			<h:outputText value="Teste Jsf" ></h:outputText>
-			
+
+				<h:outputText value=" Login: "></h:outputText>
+				<p:inputText id="login" required="true" />
+
+				<h:outputText value=" Senha: "></h:outputText>
+				<p:password id="pass2" feedback="true" required="true"></p:password>
+
+				<h:outputText value=" Contato: "></h:outputText>
+				<p:inputMask id="inputt" value="Contato" mask="(99) 9 9999-9999"></p:inputMask>
+
+				<h:commandButton value="Fazer Login" />
+
 			</h:form>
-			
 		</div>
 	</div>
-
-		<h:footer class="container">
-		<p>&copy; Equipe: Proint Reserva 2017.2</p>
-	</h:footer>
-
-
-
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -74,6 +72,7 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
 
 </h:body>
 </html>

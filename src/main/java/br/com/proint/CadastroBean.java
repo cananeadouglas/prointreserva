@@ -1,8 +1,10 @@
 package br.com.proint;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean(name="cadastroBean")
+@ViewScoped // mantem os dados em tela maneneBean fica conectados a jsf
 
 public class CadastroBean {
 	
@@ -15,13 +17,6 @@ public class CadastroBean {
 	private Long contato;
 	
 	private String email;
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
