@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -6,12 +6,14 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Login</title>
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
-</h:head>
+<f:view contentType="text/html; charset=ISO-8859-1">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Cadastro</title>
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+	</h:head>
+</f:view>
 
 <h:body>
 
@@ -44,24 +46,56 @@
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">Tela de Cadastro</h1>
-			<p>Cadastre-se no nosso site para obter informaÃ§Ãµes sobre Trilhas
+			<h3 class="display-4">Tela de Cadastro</h3>
+			<p>Cadastre-se no nosso site para obter informações sobre Trilhas
 				artigos e muito mais.</p>
 
-			<h:form id="formCadastroBean">
+			<h:form id="formCadastroBean" acceptcharset="ISO-8859-1">
+				<table>
 
-				<h:outputText value=" Login: "></h:outputText>
-				<p:inputText id="login" required="true" />
+					<tr>
+						<td><h:outputText value="Nome Completo:"></h:outputText></td>
+						<td><p:inputText id="nomecompleto" required="true"
+								value="#{cadastroBean.cadastro.nomeCompleto}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="CPF:"></h:outputText></td>
+						<td><p:inputText id="cpf" required="true"
+								value="#{cadastroBean.cadastro.cpf}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Contato: "></h:outputText></td>
+						<td><p:inputText id="contato"
+								value="#{cadastroBean.cadastro.contato}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="E-mail: "></h:outputText></td>
+						<td><p:inputText id="email" type="email" required="true"
+								value="#{cadastroBean.cadastro.email}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Login: "></h:outputText></td>
+						<td><p:inputText id="login" required="true"
+								value="#{cadastroBean.cadastro.login}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Senha: "></h:outputText></td>
+						<td><p:password id="senha" feedback="true"
+								weakLabel="Muito Fraca" goodLabel="Senha Razoável"
+								strongLabel="Senha Forte" inline="true"
+								requiredMessage="Senha Obrigatória"
+								value="#{cadastroBean.cadastro.senha}" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton value="Enviar Cadastro"
+								action="#{cadastroBean.salvar}" /></td>
+						<td><h:outputLabel value="#{cadastroBean.title}" /></td>
+					</tr>
 
-				<h:outputText value=" Senha: "></h:outputText>
-				<p:password id="pass2" feedback="true" required="true"></p:password>
-
-				<h:outputText value=" Contato: "></h:outputText>
-				<p:inputMask id="inputt" value="Contato" mask="(99) 9 9999-9999"></p:inputMask>
-
-				<h:commandButton value="Fazer Login" />
+				</table>
 
 			</h:form>
+
 		</div>
 	</div>
 
